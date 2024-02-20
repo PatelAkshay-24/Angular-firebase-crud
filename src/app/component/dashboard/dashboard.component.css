@@ -1,0 +1,51 @@
+.sidebar {
+  background-color: #094949;
+  color: #fff;
+  padding: 20px;
+  height: 100vh;
+  width: 18% !important ;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Content */
+.content {
+  padding: 20px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #008080;
+  color: #fff;
+}
+#Addtask {
+  float: right;
+}

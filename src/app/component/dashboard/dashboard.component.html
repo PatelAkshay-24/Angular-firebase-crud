@@ -1,0 +1,137 @@
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar">
+        <h2>Dashboard</h2>
+        <P>Welcome Admin, {{ userEmail }}</P>
+
+        <button class="btn btn-primary mx-3" (click)="logout()">Logout</button>
+      </div>
+
+      <!-- Content -->
+      <div class="col-md-9 content">
+        <h2>
+          STUDENT TASK DETAILS
+          <button
+            class="btn btn-secondary mx-3"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            id="Addtask"
+          >
+            Add Task
+          </button>
+        </h2>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Add Student Details
+                </h1>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="StudentTaskName" class="form-label"
+                      >Student Task Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="TaskName"
+                      name="TaskName"
+                      [(ngModel)]="TaskName"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="TaskDescription" class="form-label"
+                      >Task Description</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="Description"
+                      name="Description"
+                      [(ngModel)]="Description"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="TaskDescription" class="form-label"
+                      >Student Email</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="emailId"
+                      name="emailId"
+                      [(ngModel)]="emailId"
+                    />
+                  </div>
+
+                  <div class="button">
+                    <button
+                      type="button"
+                      class="btn btn-secondary mx-2"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancle
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      data-bs-dismiss="modal"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                      (click)="addstudent()"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table for CRUD operations -->
+        <table>
+          <thead>
+            <tr>
+              <th>StudentId</th>
+              <th>emailId</th>
+              <th>Task Name</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of studentsList">
+              <td>{{ student.StudentId }}</td>
+              <td>{{ student.emailId }}</td>
+              <td>{{ student.TaskName }}</td>
+              <td>{{ student.Description }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-danger"
+                  (click)="deleteStudent(student)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+
+            <!-- Add more rows for other products -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

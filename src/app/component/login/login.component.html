@@ -1,0 +1,57 @@
+<div class="signin-background">
+  <div class="signin-container">
+    <div class="signin-card">
+      <div class="signin-card-header">
+        <h2>Welcome To Login</h2>
+      </div>
+      <div class="signin-card-body">
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              name="email"
+              [(ngModel)]="email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="password"
+            />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+              <button class="btn btn-primary btn-block" (click)="signin()">
+                Sign In
+              </button>
+            </div>
+          </div>
+          <div class="signup-card-footer text-center">
+            <!-- Adding Google sign-in button with Google icon -->
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-block mt-3"
+              (click)="SignInWithGoogle()"
+            >
+              <i class="fab fa-google mr-2"></i> Sign in with Google
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="signin-card-footer">
+        Create new account:<a routerLink="/registration">Sign up</a>
+      </div>
+      <div class="signin-card-footer">
+        Wanna Forgot Password?<a routerLink="/forgot-password"
+          >Forgot-password</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

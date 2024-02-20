@@ -1,0 +1,52 @@
+<div class="signup-background">
+  <div class="signup-container">
+    <div class="signup-card">
+      <div class="signup-card-header">
+        <h2>Welcome To Registration</h2>
+      </div>
+      <div class="signup-card-body">
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              [(ngModel)]="email"
+              class="form-control"
+              placeholder="Email"
+              name="email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              [(ngModel)]="password"
+              class="form-control"
+              placeholder="Password"
+              name="password"
+            />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+              <button class="btn btn-primary btn-block" (click)="signup()">
+                Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="signup-card-footer text-center">
+            <!-- Adding Google sign-in button with Google icon -->
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-block mt-3"
+              (click)="SignUpWithGoogle()"
+            >
+              <i class="fab fa-google mr-2"></i> Sign in with Google
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="signup-card-footer">
+        Already have an account? <a routerLink="/login">Sign In</a>
+      </div>
+    </div>
+  </div>
+</div>
